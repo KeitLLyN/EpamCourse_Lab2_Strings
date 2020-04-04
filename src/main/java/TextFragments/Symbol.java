@@ -1,5 +1,7 @@
 package TextFragments;
 
+import TextFragments.interfaces.ISymbol;
+
 public class Symbol implements ISymbol {
     private char symbol;
 

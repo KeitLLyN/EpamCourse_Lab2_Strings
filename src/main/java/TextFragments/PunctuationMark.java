@@ -1,5 +1,8 @@
 package TextFragments;
 
+import TextFragments.interfaces.ISentencePart;
+import TextFragments.interfaces.ISymbol;
+
 public class PunctuationMark implements ISymbol, ISentencePart {
     private char mark;
 

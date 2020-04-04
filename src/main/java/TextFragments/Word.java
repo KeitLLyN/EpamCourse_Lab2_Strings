@@ -1,6 +1,8 @@
 package TextFragments;
 
 
+import TextFragments.interfaces.ISentencePart;
+
 public class Word implements ISentencePart {
     private String word;
 

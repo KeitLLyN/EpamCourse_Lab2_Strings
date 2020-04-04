@@ -1,5 +1,7 @@
 package TextFragments;
 
+import TextFragments.interfaces.ISentencePart;
+
 import java.util.ArrayList;
 import java.util.List;
 
