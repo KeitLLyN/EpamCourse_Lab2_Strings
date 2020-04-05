@@ -10,15 +10,20 @@ public class Word implements ISentencePart {
     private List<Symbol> word;
 
     public Word(){
-        word = new ArrayList<>(){
-            {
-                add(new Symbol(' '));
-            }
-        };
+        word = new ArrayList<>();
     }
 
     public Word(List<Symbol> word) {
         this.word = word;
+    }
+
+    public Word(char symbol){
+        word = new ArrayList<>(){
+            {
+                add(new Symbol(symbol));
+            }
+        };
+
     }
 
     public void add(Symbol symbol){
@@ -31,6 +36,10 @@ public class Word implements ISentencePart {
 
     public void clear(){
         word = new ArrayList<>();
+    }
+
+    public void removeStartSymbol(){
+        word.remove(0);
     }
 
     @Override

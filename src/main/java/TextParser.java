@@ -7,7 +7,6 @@ public class TextParser {
     private String path;
     private String book;
 
-    private StringBuilder stringBuilder = new StringBuilder();
     private Sentence sentence = new Sentence();
     private Paragraph paragraph = new Paragraph();
     private Word word = new Word();
@@ -38,7 +37,7 @@ public class TextParser {
         if (path == null && book == null) return null;
         char[] symbols = book.toCharArray();
 
-        for (int i = 0; i < book.length()-6; i++) {
+        for (int i = 0; i < book.length(); i++) {
 
             if(isNotPunctuation(symbols[i])) {
                 while (isNotPunctuation(symbols[i])){
@@ -46,21 +45,26 @@ public class TextParser {
                     i++;
                 }
                 sentence.add(word);
-                word = new Word();
+                word = new Word(' ');
             }
+            // если текущий символ является знаком препинания
             if (PUNCTUATION_MARKS.contains(String.valueOf(symbols[i]))){
                 sentence.add(new PunctuationMark(symbols[i]));
-                if (isEnterPressed(symbols,++i)){
+                if (isEnterPressed(symbols,i+1)){
                     sentence.add(new PunctuationMark('\n'));
-                    i++;
+                    word.removeStartSymbol();
+                    i+=2;
                 }
             }
-
+            // если текущий символ является окончанием предложения
             if (END_OF_SENTENCE_MARKS.contains(String.valueOf(symbols[i]))){
                 sentence.add(new PunctuationMark(symbols[i]));
-                if (isEnterPressed(symbols,++i)){
+                // если после точки нажат энтер, то к предложению добавляем знак перехода
+                if (i < book.length()-2 && isEnterPressed(symbols,i+1)){
                     sentence.add(new PunctuationMark('\n'));
-                    i++;
+                    // убирается пробел, как первый символ слова, чтобы начало выводимой строки не начиналось с пробела
+                    word.removeStartSymbol();
+                    i+=2;
                 }
                 paragraph.add(sentence);
                 sentence = new Sentence();
@@ -69,9 +73,11 @@ public class TextParser {
             if (isTheEndOfParagraph(symbols,i)){
                 i += 3; // т.к таких симоволов 4 подряд, а проверяется только первые 2
                 text.add(paragraph);
+                word.removeStartSymbol();
                 paragraph = new Paragraph();
             }
         }
+        text.add(paragraph);
         return text;
     }
 

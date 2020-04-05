@@ -40,6 +40,6 @@ public class Text {
             }
             stringBuilder.append("\n\n");
         }
-        return stringBuilder.toString();
+        return stringBuilder.substring(0,stringBuilder.length()-2);
     }
 }
