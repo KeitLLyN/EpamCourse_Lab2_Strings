@@ -35,15 +35,10 @@ public class Text {
         for(Paragraph paragraph: text){
             for(Sentence sentence: paragraph.getParagraph()){
                 for (ISentencePart sentencePart: sentence.getSentence()){
-                    if (sentencePart instanceof Word) {
-                        stringBuilder.append(" ");
-                        stringBuilder.append(sentencePart.getPart());
-                    }
-                    if (sentencePart instanceof PunctuationMark){
-                        stringBuilder.append(sentencePart.getPart());
-                    }
+                    stringBuilder.append(sentencePart.getPart());
                 }
             }
+            stringBuilder.append("\n\n");
         }
         return stringBuilder.toString();
     }

@@ -23,4 +23,9 @@ public class PunctuationMark implements ISymbol, ISentencePart {
     public String getPart(){
         return String.valueOf(mark);
     }
+
+    @Override
+    public String toString(){
+        return getPart();
+    }
 }

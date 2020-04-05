@@ -24,6 +24,10 @@ public class Sentence {
         return sentence.size();
     }
 
+    public void clear(){
+        sentence = new ArrayList<>();
+    }
+
     public List<ISentencePart> getSentence() {
         return sentence;
     }

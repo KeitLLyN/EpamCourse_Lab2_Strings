@@ -22,5 +22,9 @@ public class Symbol implements ISymbol {
         return symbol;
     }
 
+    @Override
+    public String toString(){
+        return String.valueOf(symbol);
+    }
 
 }

@@ -1,7 +1,4 @@
-import TextFragments.Paragraph;
-import TextFragments.PunctuationMark;
-import TextFragments.Sentence;
-import TextFragments.Text;
+import TextFragments.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,6 +6,15 @@ import java.io.IOException;
 public class TextParser {
     private String path;
     private String book;
+
+    private StringBuilder stringBuilder = new StringBuilder();
+    private Sentence sentence = new Sentence();
+    private Paragraph paragraph = new Paragraph();
+    private Word word = new Word();
+    private Text text = new Text();
+
+    private final String PUNCTUATION_MARKS = ",:–";
+    private final String END_OF_SENTENCE_MARKS = ".?!;";
 
     public TextParser(){
         path = null;
@@ -29,27 +35,59 @@ public class TextParser {
     }
 
     public Text parse(){
-        if (path == null || book == null) return null;
-
-        StringBuilder stringBuilder = new StringBuilder();
-        Sentence sentence = new Sentence();
-        Paragraph paragraph = new Paragraph();
-        Text text = new Text();
+        if (path == null && book == null) return null;
         char[] symbols = book.toCharArray();
-        String punctuationMarks = ".,?!:;–";
 
-        for (int i = 0; i < book.length(); i++) {
-            if(symbols[i] == '\r' && symbols[i + 1] == '\n') {
-                i+=2; // т.к таких симоволов 4 подряд, а проверяется только первые 2
-                text.add(paragraph);
-                paragraph.clear();
+        for (int i = 0; i < book.length()-6; i++) {
+
+            if(isNotPunctuation(symbols[i])) {
+                while (isNotPunctuation(symbols[i])){
+                    word.add(new Symbol(symbols[i]));
+                    i++;
+                }
+                sentence.add(word);
+                word = new Word();
             }
-            if (punctuationMarks.contains(String.valueOf(symbols[i]))){
+            if (PUNCTUATION_MARKS.contains(String.valueOf(symbols[i]))){
                 sentence.add(new PunctuationMark(symbols[i]));
+                if (isEnterPressed(symbols,++i)){
+                    sentence.add(new PunctuationMark('\n'));
+                    i++;
+                }
             }
 
+            if (END_OF_SENTENCE_MARKS.contains(String.valueOf(symbols[i]))){
+                sentence.add(new PunctuationMark(symbols[i]));
+                if (isEnterPressed(symbols,++i)){
+                    sentence.add(new PunctuationMark('\n'));
+                    i++;
+                }
+                paragraph.add(sentence);
+                sentence = new Sentence();
+            }
+
+            if (isTheEndOfParagraph(symbols,i)){
+                i += 3; // т.к таких симоволов 4 подряд, а проверяется только первые 2
+                text.add(paragraph);
+                paragraph = new Paragraph();
+            }
         }
         return text;
+    }
+
+    private boolean isNotPunctuation(char symbol){
+        return !PUNCTUATION_MARKS.contains(String.valueOf(symbol)) &&
+                !END_OF_SENTENCE_MARKS.contains(String.valueOf(symbol)) &&
+                symbol != ' ' &&
+                symbol != '\r';
+    }
+
+    private boolean isEnterPressed(char[] symbols, int i){
+        return symbols[i] == '\r' && symbols[i + 1] == '\n' && symbols[i+2] != '\r';
+    }
+
+    private boolean isTheEndOfParagraph(char[] symbols , int i){
+        return symbols[i] == '\r' && symbols[i+1]=='\n' && symbols[i+2]=='\r';
     }
 
     @Override
