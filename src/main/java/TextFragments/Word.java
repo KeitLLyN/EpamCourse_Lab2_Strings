@@ -34,9 +34,6 @@ public class Word implements ISentencePart {
         return word;
     }
 
-    public void clear(){
-        word = new ArrayList<>();
-    }
 
     public void removeStartSymbol(){
         word.remove(0);

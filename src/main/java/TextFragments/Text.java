@@ -3,7 +3,14 @@ package TextFragments;
 import TextFragments.interfaces.ISentencePart;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+
+import static java.util.Comparator.comparingInt;
+import static java.util.Comparator.naturalOrder;
+import static java.util.stream.Collectors.toList;
+import static org.apache.commons.lang3.StringUtils.countMatches;
 
 public class Text {
     private List<Paragraph> text;
@@ -26,6 +33,12 @@ public class Text {
 
     public int size(){
         return text.size();
+    }
+
+    public List<String> sortTextByCountingSymbols(char toFind){
+        return Arrays.stream(text.toString().split("\\W+"))
+                .sorted(comparingInt((String word) -> countMatches(word, toFind)).reversed().thenComparing(naturalOrder()))
+                .collect(toList());
     }
 
     @Override
