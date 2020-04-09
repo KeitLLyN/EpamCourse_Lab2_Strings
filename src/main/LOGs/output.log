@@ -70,3 +70,11 @@
 13:17:16.935 [main] INFO  Input - Return char:a
 13:17:16.935 [main] INFO  TextFragments.Text - Text was sorting by counting a symbol
 13:17:16.935 [main] INFO  TextFragments.Text - Text was displayed 
+13:24:01.089 [main] INFO  Main - Main started
+13:24:01.093 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:24:01.097 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:24:01.101 [main] INFO  TextFragments.Text - Text was displayed 
+13:24:03.392 [main] INFO  Input - Return char:d
+13:24:03.392 [main] INFO  TextFragments.Text - Text was sorting by counting 'd' symbol
+13:24:03.392 [main] INFO  TextFragments.Text - Text was displayed 
+13:24:03.399 [main] INFO  Main - Main finished
