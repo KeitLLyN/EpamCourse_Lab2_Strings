@@ -1,0 +1,72 @@
+12:57:40.073 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+12:57:40.080 [main] INFO  TextParser - Parsing text from null
+12:57:40.084 [main] INFO  TextFragments.Text - Text was displayed 
+12:57:45.018 [main] INFO  Input - Return char:a
+12:58:14.603 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+12:58:14.610 [main] INFO  TextParser - Parsing text from null
+12:58:14.614 [main] INFO  TextFragments.Text - Text was displayed 
+12:58:14.753 [main] INFO  TextFragments.Text - Text was displayed 
+12:58:20.718 [main] INFO  Input - Return char:a
+13:01:04.452 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:01:04.458 [main] INFO  TextParser - Parsing text from null
+13:01:04.462 [main] INFO  TextFragments.Text - Text was displayed 
+13:01:06.622 [main] INFO  Input - Return char:a
+13:01:06.622 [main] INFO  TextFragments.Text - Text was sorting by counting a symbol
+13:01:06.622 [main] INFO  TextFragments.Text - Text was displayed 
+13:01:46.133 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:01:46.140 [main] INFO  TextParser - Parsing text from null
+13:01:46.144 [main] ERROR TextParser - Incorrect punctuation in null file
+13:01:46.145 [main] INFO  TextFragments.Text - Text was displayed 
+13:03:54.120 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:03:54.126 [main] INFO  TextParser - Parsing text from null
+13:03:54.131 [main] ERROR TextParser - Incorrect punctuation in null file
+13:03:54.131 [main] INFO  TextFragments.Text - Text was displayed 
+13:03:54.132 [main] ERROR TextFragments.Text - start 0, end -2, length 0
+13:04:02.684 [main] INFO  Input - Return char:a
+13:04:02.684 [main] INFO  TextFragments.Text - Text was sorting by counting a symbol
+13:04:02.684 [main] INFO  TextFragments.Text - Text was displayed 
+13:04:02.684 [main] ERROR TextFragments.Text - start 0, end -2, length 0
+13:05:23.691 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:05:23.697 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:05:23.703 [main] ERROR TextParser - Incorrect punctuation in src/main/Text ENG.txt file
+13:05:23.703 [main] INFO  TextFragments.Text - Text was displayed 
+13:05:23.703 [main] ERROR TextFragments.Text - start 0, end -2, length 0
+13:05:25.842 [main] INFO  Input - Return char:a
+13:05:25.842 [main] INFO  TextFragments.Text - Text was sorting by counting a symbol
+13:05:25.842 [main] INFO  TextFragments.Text - Text was displayed 
+13:05:25.842 [main] ERROR TextFragments.Text - start 0, end -2, length 0
+13:05:52.032 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:05:52.038 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:05:52.042 [main] INFO  TextFragments.Text - Text was displayed 
+13:05:54.811 [main] INFO  Input - Return char:a
+13:05:54.811 [main] INFO  TextFragments.Text - Text was sorting by counting a symbol
+13:05:54.811 [main] INFO  TextFragments.Text - Text was displayed 
+13:05:59.693 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:05:59.699 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:05:59.703 [main] INFO  TextFragments.Text - Text was displayed 
+13:06:01.119 [main] ERROR Input - String index out of range: 0
+13:06:03.132 [main] ERROR Input - String index out of range: 0
+13:06:04.223 [main] INFO  Input - Return char: 
+13:06:04.223 [main] INFO  TextFragments.Text - Text was sorting by counting   symbol
+13:06:04.223 [main] INFO  TextFragments.Text - Text was displayed 
+13:06:27.834 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:06:27.840 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:06:27.845 [main] INFO  TextFragments.Text - Text was displayed 
+13:06:51.329 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:06:51.335 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:06:51.339 [main] INFO  TextFragments.Text - Text was displayed 
+13:06:57.123 [main] INFO  Input - Return char:-
+13:06:57.123 [main] INFO  TextFragments.Text - Text was sorting by counting - symbol
+13:06:57.123 [main] INFO  TextFragments.Text - Text was displayed 
+13:07:25.794 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:07:25.800 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:07:25.804 [main] INFO  TextFragments.Text - Text was displayed 
+13:07:28.514 [main] INFO  Input - Return char:h
+13:07:28.514 [main] INFO  TextFragments.Text - Text was sorting by counting h symbol
+13:07:28.515 [main] INFO  TextFragments.Text - Text was displayed 
+13:17:14.205 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+13:17:14.211 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+13:17:14.215 [main] INFO  TextFragments.Text - Text was displayed 
+13:17:16.935 [main] INFO  Input - Return char:a
+13:17:16.935 [main] INFO  TextFragments.Text - Text was sorting by counting a symbol
+13:17:16.935 [main] INFO  TextFragments.Text - Text was displayed 
