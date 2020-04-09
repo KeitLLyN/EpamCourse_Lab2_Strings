@@ -1,5 +1,8 @@
 package TextFragments;
 
+import com.sun.source.tree.BreakTree;
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,11 +25,13 @@ public class Paragraph {
         paragraph.add(sentence);
     }
 
-    public void clear(){
-        paragraph = new ArrayList<>();
-    }
 
     public int size(){
         return paragraph.size();
+    }
+
+    @Override
+    public String toString(){
+        return StringUtils.join(paragraph,"");
     }
 }

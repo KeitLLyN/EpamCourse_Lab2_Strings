@@ -43,4 +43,9 @@ public class Word implements ISentencePart {
     public String getPart(){
         return StringUtils.join(word,"");
     }
+
+    @Override
+    public String toString(){
+        return getPart();
+    }
 }
