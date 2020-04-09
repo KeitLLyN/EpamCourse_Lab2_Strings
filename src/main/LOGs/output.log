@@ -78,3 +78,11 @@
 13:24:03.392 [main] INFO  TextFragments.Text - Text was sorting by counting 'd' symbol
 13:24:03.392 [main] INFO  TextFragments.Text - Text was displayed 
 13:24:03.399 [main] INFO  Main - Main finished
+14:08:51.417 [main] INFO  Main - Main started
+14:08:51.422 [main] INFO  TextParser - parsing file: src/main/Text ENG.txt
+14:08:51.426 [main] INFO  TextParser - Parsing text from src/main/Text ENG.txt
+14:08:51.430 [main] INFO  TextFragments.Text - Text was displayed 
+14:08:54.489 [main] INFO  Input - Return char:a
+14:08:54.489 [main] INFO  TextFragments.Text - Text was sorting by counting 'a' symbol
+14:08:54.489 [main] INFO  TextFragments.Text - Text was displayed 
+14:08:54.496 [main] INFO  Main - Main finished

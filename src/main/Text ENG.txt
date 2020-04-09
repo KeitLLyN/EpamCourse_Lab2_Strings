@@ -1,0 +1,15 @@
+Structured Types in Java
+Java has only three structured types.
+
+Array - A fixed length, ordered collection of values of the same type (called the element type) stored in contiguous memory locations.
+Class - A collection of named fields and methods that may access these fields. Classes are the central type in Java and are used for a variety of purposes, including grouping fields and methods, acting as a library-like container for methods, and controlling access to fields and methods.
+Interface - A collection of method signatures. A method signature is the name, number and types of parameters, and return type of a method. Interfaces are discussed in more detail in the next chapter.
+
+These built-in structured types can be combined to make more complex structured types. For example, an array can have elements that are classes some whose fields are classes and others of which are arrays. Thus programmers can build arbitrarily complicated structured types.
+
+An important distinction between types in a language is whether a type is value or a reference type.
+
+Value type: A type whose variables hold data structures representing the values of the carrier set of the type.
+Reference type: A type whose variables hold references to locations where data structures representing the values of the carrier set of the type are stored.
+
+To illustrate this distinction, note that in Java the  type is a value type and array types are reference types. If v is a byte variable storing the value five, for example, then the memory location associated with v holds the representation of five (usually 00000101). If r is a  array variable holding a ten-byte array, then the memory location associated with r holds a reference to another memory location where the elements and other data of the array is stored. This has important consequences for assignments, parameter passing, and comparisons. For example, the assignment byte x = v will copy the value five from  into x, and further modifications of x or  will not affect the other. In contrast, the assignment byte[] b = r will copy the reference to the byte array from  into b. Both r and b will thus hold a reference to a single  array. Changes to the byte array through r or b (such as b[0] = 5) will be reflected in the other (so r[0] will be five). In such cases we say that r and  are aliases.
