@@ -38,7 +38,7 @@ public class Text {
     }
 
     public List<String> sortByCountingSymbols(char toFind){
-        LOG.info(String.format("Text was sorting by counting %s symbol",toFind));
+        LOG.info(String.format("Text was sorting by counting '%s' symbol",toFind));
         return Arrays.stream(toString().split("\\W+"))
                 .sorted(comparingInt((String word) -> countMatches(word, toFind)).reversed().thenComparing(naturalOrder()))
                 .collect(toList());
